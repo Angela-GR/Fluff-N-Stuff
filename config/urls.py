@@ -22,7 +22,7 @@ urlpatterns = [
     path("",views.home,name= "home"),
     path("products/",views.products, name= "products"),
     path("customers/",views.customers,name="customers"),
-    path("dashboard/",views.dashboard, name= "dashboard"),
+    # path("dashboard/",views.dashboard, name= "dashboard"),
 
 
 ]
