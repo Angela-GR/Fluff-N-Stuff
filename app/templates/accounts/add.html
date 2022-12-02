@@ -1,0 +1,34 @@
+<!doctype html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h4> Add New Customer</h4>
+    <hr>
+    
+    <form action=""method="POST">
+        {% csrf_token %} 
+        {% comment %} <div class="add-group">
+            <label for="">ID</label>
+            <input type="text" name="student_id" class="form-control">
+        </div> {% endcomment %}
+
+        <div class="add-group">
+            <label for="">Name</label>
+            <input type="text" name="student_name" class="form-control">
+        </div>
+
+        <div class="add-group">
+            <label for="">Contact</label>
+            <input type="text" name="student_contact" class="form-control">
+        </div>
+
+        <div class="add-group">
+            <button class="btn btn-primary" type="submit"> Add New Customer</button>
+            <a href="{% url 'dashboard' %}" class="btn btn">Show Details</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

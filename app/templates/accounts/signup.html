@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Sign up Application</title>
+    <link rel = "stylesheet" href= "{% static "styles.css"%}">
+</head>
+<body>
+    <h3>Dog Registerstration</h3>
+<div class = "signup_boxes">
+    <form method = "POST" action= "">
+        {% csrf_token %}
+        <div class = "inp">
+            {{form.username.label}}
+            {{form.username}}
+        </div>
+        <div class "inp">
+            {{form.password1.label}}
+            {{form.password1}}
+        </div>
+        <div class "inp">
+            {{form.password2.label}}
+            {{form.password2}}
+        </div>
+        {% comment %} <input class = "submit" type= "submit" name = "Register"> {% endcomment %}
+        <a href="">
+            <input type="submit"/>
+          </a>
+    </form>
+    {{form.errors}}
+    <div class = "login_link">
+        Click here to login in! <a href= "{%url 'login' %}"> Log In</a>
+    </div>
+</div>
+</body>
+
+
+
+
+
+
+

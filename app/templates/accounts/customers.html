@@ -1,67 +1,34 @@
-{% extends "accounts/main.html"%}
+<!doctype html>
 
-{%block content%}
-<h1>Fluff N Stuff</h1>
-<br>
+{% block content %}
 
-<div class="row">
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Customer:</h5>
-			<hr>
-			<a class="btn btn-outline-info  btn-sm btn-block" href="">Update Customer</a>
-			<a class="btn btn-outline-danger  btn-sm btn-block" href="">Delete Customer</a>
+<div class="container mt-3">
+    <h4> Customer's Personal Details Application </h4>
+    <a href="{% url 'add' %}" class="btn btn-sm btn-info">Add New Customer</a>
+    <a href="{% url 'home' %}" class="btn btn-sm btn-info">Home Page</a>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Customer's Name</th>
+                <th>Customer's Contact Information</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in customer%}
+            <tr>
+                <td>{{c.name}}</td>
+                <td>{{c.email}}</td>
+                <td>
+                    <a href="update" class="btn btn-sm btn-info">Update Student</a>
+                    <a href="delete" class="btn btn-sm btn-danger">Delete Student</a>
+                </td>
+            </tr>
+            {% endfor block %}
 
-		</div>
-	</div>
-
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Contact Information</h5>
-			<hr>
-			<p>Email: {{customer.email}}</p>
-			<p>Phone: </p>
-		</div>
-	</div>
-
-	<div class="col-md">
-		<div class="card card-body">
-			<h5>Total Orders</h5>
-			<hr>
-			<h1 style="text-align: center;padding: 10px"></h1>
-		</div>
-	</div>
+        </tbody>
+    </table>
 </div>
 
-
-<br>
-<div class="row">
-	<div class="col">
-		<div class="card card-body">
-			<form method="get">
-
-		    <button class="btn btn-primary" type="submit">Search Customer</button>
-		  </form>
-		</div>
-	</div>
-	
-</div>
-<br>
-
-<div class="row">
-	<div class="col-md">
-		<div class="card card-body">
-			<table class="table table-sm">
-				<tr>
-				<th>Product Type</th>
-                <th>Date Purchased</th>
-                <th>Status Of Order</th>
-                <th>Update Order</th>
-                <th>Remove Order</th>
-				</tr>
-
-			</table>
-		</div>
-	</div>
-</div>
-{% endblock %} 
+{% endblock content %}
