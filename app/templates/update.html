@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action = "" method = "POST">
+      {% csrf_token %}
+      <label for = 'Title'>
+      title
+      </label>
+      <input type = "text" name = "Title"/>
+
+      <label for = 'Information'>
+        information
+      </label>
+      <input type = "text" name = "Information"/>
+      <input type = "submit" name = "Update"/>
+    </form>
+    
+{% endblock content%}

@@ -32,5 +32,8 @@ urlpatterns = [
     path('signup/',views.sign_up,name="signup"),
     path("login/", views.login_in, name="login"),
 
+    # update and delete
+    path('delete/<int:id>/',views.delete_customer, name="delete"),
+    path("update/", views.update_customer, name = "update")
 
 ]

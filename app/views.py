@@ -63,17 +63,22 @@ def login_in(request):
     context = {"form":form}
     return render (request, "accounts/login.html", context)
 
+# delete/update
+def delete_customer(request, id):
+    if request.method == "POST":
+        delete = Product.objects.get(id = id)
+        delete.delete()
+        return redirect(home)
+    else:
+        return render(request, "products.html")
 
-
-# #Log in
-# def login_in(request):
-#     if request.method == "POST":
-#         username = request.POST.get("username")
-#         password = request.POST.get("password")
-#         user = authenticate(request, username=username, password=password)
-#         if user is not None:
-#             login(request,user)
-#             return redirect("home")
-#         context = {}
-#         return render(request,"accounts/login.html",context)
-
+def update_customer(request):
+    if request.method == "POST":
+        item = request.POST.get("product")
+        price = request.POST.get("price")
+        change = Product.objects.get(item = item)
+        change.price = price
+        change.save()
+        return redirect('home')
+    else:
+        return render(request, "update.html")
