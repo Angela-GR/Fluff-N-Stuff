@@ -1,0 +1,8 @@
+.test{
+    background-color: linear-gradient(#ffe4dd, #f8dec3, #e69f73);
+    box-shadow: 23px 23px 40px #97b8a5,
+    -23px -23px 40px #f18b73;
+}
+.ok{
+    background-color: #f8d6b2;
+}
